@@ -1,0 +1,29 @@
+{
+	"Är systemet i Fig.1 nedan ett FIR eller IIR system? Motivera! 2p": "IIR system eftersom utsignal beror både på insignal och äldre utsignaler.",
+	"Två LTI system ska kaskadkopplas, spelar kopplingsordning någon roll? 1p": "Nej",
+	"Hur ser signalen x[n] ut i det tidsdiskreta domänet då den även har diskret frekvens domän? 1p": "Den är periodisk",
+	"Hur bestämmer man impulssvaret för ett okänd LTI system? 1p": "Genom att välja impuls som insignal och låta impulsen propagera genom systemet.",
+	"Förklara kortfattat vad som menas med vikning? 2p": "Enligt samplingskooren fs > 2 * fmax -> fmax < fs / 2 för att frekvensinnehållet i sampelad signal blir samma som för den tidskontinuerliga signalen. Frekvenser som överskrider fs / 2 viks kring denna punkt till lägre frekvensinnehåll.",
+	"Vad menas med översampling och vad är det bra för? (ge kortfattad beskrivning) 2p": "Med översampling menas att samplingsfrekvensen väljs högre än den dubbla maximala frekvensen i signalen som ska samplas. Antivikningsfilter ej idealt så är bra att välja fs så att fs / 2 hamnar i stoppbandet.",
+	"Hur ska den cirkulära faltning modifieras för att få samma resultat som den linjära faltning? 2p": "Zero-padda signalen så att enbart nollor viks in, med tillräckligt många nollor.",
+	
+	"Vad är skillnad mellan ett FIR och IIR system? 1p": "FIR - Finite Impulse Response -> Utsignal beror endast på insignal under tid (ej återkoppling). IIR - Infinite Impulse Response -> Utsignal beror på både insignal och föregående återkopplad utsignal.",
+	"Vad är skillnad mellan kausal och icke-kausal system? 1p": "Kausalt system beror sig endast på nutida och tidigare samplar. Icke-kausalt system nyttjar även framtida samplar.",
+	"Är följande signal periodisk? I så fall bestäm dess periodtid T0! Om inte, motivera varför signalen inte är periodisk. x1(n) = e^j60πn - e^j120πn 1p x2(t) = 2 cos(30t + π) 1p": "x1(n) har två frekvenser ω1 = 60π = 2πf1 och ω2 = 120π = 2πf2. Periodiska signaler då frek = k * f0, f0 = fundamental frekvens. f0 = 30 Hz, T0 = 1/30. Sammanlagt är X1(n) periodisk. X2(t) är också periodisk.",
+	"Beräkna frekvensen f i signalen x(t) efter sampling om fs = 100 Hz. x(t) = 3 cos (250πt + π/4) 1p": "ω = 250π = 2πf -> f = 125 Hz -> Sampling frekvens fs = 100 Hz -> 2.5 Hz.",
+	"Hur lyder Shannons teorem? (Ej ordagrant, innebörden mer viktig) 2p": "Shannons teorem eller samplingsteoremet säger att samplingsfrekvens fs > 2 * fmax för att undvika aliasing av signalens frekvensinnehåll kring fs/2.",
+	"Vad är skillnaden mellan Fourier-serier och Fouriertransform? 2p": "Fourier-serier kan analysera endast periodiska signaler. Fouriertransform hanterar både de periodiska och icke-periodiska signalerna.",
+	"Vad är skillnaden mellan DTFT och DFT? 2p": "DTFT: Discrete Time Fourier Transform -> Diskret i tiden men kontinuerlig i frekvens. DFT: Discrete Fourier Transform -> Diskret både i tiden och i frekvens.",
+	"Vad är FFT? 1p": "FFT: Fast Fourier Transform är algoritmen som implementerar DFT metoden på ett effektivt sätt.",
+
+	"Vad står LTI för? 1p": "LTI står för Linear Time Invariant (Linjär Tidsinvariant).",
+	"För vilken typ av signaler kan Fourierserier tillämpas på? 1p": "Periodiska signaler.",
+	"Är följande signal periodisk? I så fall bestäm dess periodtid T0! Om inte, motivera varför signalen inte är periodisk. x1(n) = e^(j60πn) - e^(j100πn) x2(t) = 5 sin(50t) 1p": "x1(n) har två frekvenser, ω1 = 60π = 2πf1 och ω2 = 100π = 2πf2. Periodisk signal då frekvensen är k*f0, där f0 är fundamental frekvens. f0 = 10 Hz, T0 = 1/10. Signalen x1(n) är inte periodisk. x2(t) innehåller ett enda sinusoidalt komponent och är därför periodisk.",
+	"Beräkna frekvensen f i signalen x(t) efter sampling om fs = 120 Hz. x(t) = 4 cos (270πt + π/3) 1p": "ω = 270π = 2πf -> f = 135 Hz. Sampling frekvens fs = 120 Hz. f2 = 15 Hz, då f = 135 Hz är den vikta frekvensen.",
+	"Beskriv kortfattat samplingsteoremet. 2p": "Samplingsteoremet säger att samplingsfrekvensen måste vara större än 2 gånger den maximala frekvensen i signalen (fs > 2*fmax) för att undvika aliasing av signalens frekvensinnehåll kring fs/2.",
+	"Vilka två sätt kan användas för att undvika vikning i den samplad signal? 2p": "1) Sampla med fs > 2*fmax. 2) Filtrera bort allt från fs/2 och över.",
+	"Vad är skillnaden mellan FFT och DFT? 2p": "FFT är en algoritm som beräknar DFT på ett mycket mer effektivt sätt. DFT kräver N^2 antal operationer medan FFT kräver N*log(N) operationer.",
+	"Vad händer med spektrum X(ω) för en tidskontinuerlig signal x(t) efter sampling? 1p": "Spektrumet periodiseras med 2π/ω i ω-domänen."
+
+
+}
