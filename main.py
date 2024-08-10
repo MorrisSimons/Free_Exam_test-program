@@ -23,6 +23,14 @@ def get_question_with_alternatives(data, correct_answer):
     random.shuffle(alternatives)  # Shuffle the alternatives
     return alternatives
 
+def load_next_question():
+    if st.session_state.remaining_questions:
+        st.session_state.seen_questions.append((st.session_state.current_question, st.session_state.current_answer))
+        st.session_state.current_question, st.session_state.current_answer = st.session_state.remaining_questions.pop()
+        st.session_state.show_answer = False  # Reset answer visibility
+        st.session_state.correct = False  # Reset correctness
+        st.session_state.alternatives = get_question_with_alternatives(st.session_state.data, st.session_state.current_answer)  # Get new alternatives
+
 def main():
     st.title("Flashcard Question and Answer App")
     
@@ -36,10 +44,15 @@ def main():
     if 'remaining_questions' not in st.session_state or len(st.session_state.remaining_questions) == 0:
         reset_quiz()
     
+    # Handle the "Next Question" button
+    next_question_clicked = st.button("Next Question")
+    if next_question_clicked:
+        load_next_question()
+
     # Display the counter
     solved_questions = total_questions - len(st.session_state.remaining_questions) - 1
     st.write(f"Questions solved: {solved_questions}/{total_questions}")
-    
+
     # Display the current question
     st.write(f"**Question:** {st.session_state.current_question}")
     
@@ -55,16 +68,7 @@ def main():
             st.write(f"Incorrect! The correct answer is: {st.session_state.current_answer}")
             st.session_state.correct = False
     
-    # Handle the "Next Question" button
-    if st.button("Next Question"):
-        if st.session_state.remaining_questions:
-            st.session_state.seen_questions.append((st.session_state.current_question, st.session_state.current_answer))
-            st.session_state.current_question, st.session_state.current_answer = st.session_state.remaining_questions.pop()
-            st.session_state.show_answer = False  # Reset answer visibility
-            st.session_state.correct = False  # Reset correctness
-            st.session_state.alternatives = get_question_with_alternatives(st.session_state.data, st.session_state.current_answer)  # Get new alternatives
-        else:
-            st.write("You have answered all the questions!")
+    
     
     # Add the "Restart" button at the end
     if st.button("Restart"):
