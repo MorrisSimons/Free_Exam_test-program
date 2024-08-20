@@ -9,28 +9,34 @@ def load_data(data):
 
 def reset_quiz():
     st.session_state.seen_questions = []
-    st.session_state.remaining_questions = list(st.session_state.data.items())
+    st.session_state.remaining_questions = st.session_state.data.copy()
     random.shuffle(st.session_state.remaining_questions)  # Randomize the order of questions
-    st.session_state.current_question, st.session_state.current_answer = st.session_state.remaining_questions.pop()
+    current_q = st.session_state.remaining_questions.pop()
+    st.session_state.current_question = current_q["question"]
+    st.session_state.current_answer = current_q["answer"]
     st.session_state.show_answer = False
     st.session_state.correct = False
-    st.session_state.alternatives = get_question_with_alternatives(st.session_state.data, st.session_state.current_answer)
+    st.session_state.alternatives = get_question_with_alternatives(current_q["options"], st.session_state.current_answer)
 
-def get_question_with_alternatives(data, correct_answer):
-    all_answers = list(data.values())
-    alternatives = random.sample(all_answers, 4)  # Pick 3 random alternatives
+def get_question_with_alternatives(options, correct_answer):
+    alternatives = random.sample(options, len(options))  # Shuffle the alternatives
     if correct_answer not in alternatives:
-        alternatives[random.randint(0, 2)] = correct_answer  # Replace one alternative with the correct answer
-    random.shuffle(alternatives)  # Shuffle the alternatives
+        alternatives[random.randint(0, len(alternatives) - 1)] = correct_answer  # Ensure correct answer is in alternatives
+    random.shuffle(alternatives)  # Shuffle again to randomize the placement
     return alternatives
 
 def load_next_question():
     if st.session_state.remaining_questions:
-        st.session_state.seen_questions.append((st.session_state.current_question, st.session_state.current_answer))
-        st.session_state.current_question, st.session_state.current_answer = st.session_state.remaining_questions.pop()
+        st.session_state.seen_questions.append({
+            "question": st.session_state.current_question,
+            "answer": st.session_state.current_answer
+        })
+        current_q = st.session_state.remaining_questions.pop()
+        st.session_state.current_question = current_q["question"]
+        st.session_state.current_answer = current_q["answer"]
         st.session_state.show_answer = False  # Reset answer visibility
         st.session_state.correct = False  # Reset correctness
-        st.session_state.alternatives = get_question_with_alternatives(st.session_state.data, st.session_state.current_answer)  # Get new alternatives
+        st.session_state.alternatives = get_question_with_alternatives(current_q["options"], st.session_state.current_answer)  # Get new alternatives
 
 def main(data):
     st.title("Flashcard Question and Answer App")
@@ -69,8 +75,6 @@ def main(data):
             st.write(f"Incorrect! The correct answer is: {st.session_state.current_answer}")
             st.session_state.correct = False
     
-    
-    
     # Add the "Restart" button at the end
     if st.button("Restart"):
         reset_quiz()
@@ -78,5 +82,5 @@ def main(data):
     st.write("---")
 
 if __name__ == "__main__":
-    data = "signalbehandling/part5"
+    data = "os/24_exam"
     main(data)

@@ -1,0 +1,233 @@
+[
+	{
+		"question": "A scheduling method in which a process can be interrupted whether it has completed its current task or not is",
+		"options": [
+			"dynamic",
+			"static",
+			"preemptive",
+			"non-preemptive"
+		],
+		"answer": "preemptive"
+	},
+	{
+		"question": "Which of the following statements about semaphores is true?",
+		"options": [
+			"All alternatives",
+			"If several threads attempt a wait(S) operation simultaneously, only one thread should be allowed to proceed.",
+			"wait() and signal() operations should be indivisible operations.",
+			"A semaphore implementation should guarantee that threads do not suffer indefinite postponement."
+		],
+		"answer": "All alternatives"
+	},
+	{
+		"question": "A process is a program in execution, it exists in main memory and it may be:",
+		"options": [
+			"Either Independent process or Cooperating process",
+			"All Alternatives",
+			"Either OS process or User process",
+			"Either I/O bound process or CPU bound process"
+		],
+		"answer": "All Alternatives"
+	},
+	{
+		"question": "A frame is a portion of:",
+		"options": [
+			"Physical memory",
+			"Virtual Memory",
+			"Logical Memory",
+			"Registers memory"
+		],
+		"answer": "Physical memory"
+	},
+	{
+		"question": "Semaphores can be used for each of the following purposes except:",
+		"options": [
+			"To synchronize two or more concurrent threads",
+			"To prevent shared variables from getting corrupted",
+			"To notify the process that an event has occurred"
+		],
+		"answer": "To notify the process that an event has occurred"
+	},
+	{
+		"question": "In a paging system, a frame:",
+		"options": [
+			"Is always larger than a page",
+			"Is of the same size as that of the page",
+			"Is always smaller than the page",
+			"Has no relation to the page size"
+		],
+		"answer": "Is of the same size as that of the page."
+	},
+	{
+		"question": "Which of these activities is NOT accomplished by the Operating Systems:",
+		"options": [
+			"Mapping files onto secondary storage",
+			"Providing mechanisms for deadlock handling",
+			"Generating interrupts",
+			"Creating and deleting processes"
+		],
+		"answer": "Generating interrupts"
+	},
+	{
+		"question": "Which of the following instructions should be privileged?",
+		"options": [
+			"Read the clock",
+			"Set value of timer",
+			"Switch from user to kernel mode",
+			"Create a new thread"
+		],
+		"answer": "Set value of timer"
+	},
+	{
+		"question": "Implementing LRU precisely in an OS is expensive, so practical implementations often use an approximation called:",
+		"options": [
+			"None of the other alternatives",
+			"MFU",
+			"LFU",
+			"MRU"
+		],
+		"answer": "None of the other alternatives"
+	},
+	{
+		"question": "Among CPU scheduling policies, Shortest Remaining Processing Time (SRPT) is attractive because:",
+		"options": [
+			"It minimizes the average waiting time in the system",
+			"It is simple to implement",
+			"It minimizes the average response time in the system",
+			"It minimizes the number of context switches in the system"
+		],
+		"answer": "It minimizes the average waiting time in the system"
+	},
+	{
+		"question": "Let’s assume that there are three threads, Threads A, B, and C, running in Process Z. For which of these synchronization scenarios would you utilize a single semaphore initialized with a value of 2 (as opposed to a semaphore initialized to some other value)?",
+		"options": [
+			"Preventing Thread A or B from running function f() simultaneously",
+			"Ensuring that Thread A completes before Thread B",
+			"Ensuring that Thread A runs after Thread B and Thread C have both completed",
+			"None of the other alternatives",
+			"Preventing more than 2 of the threads from running function f() simultaneously"
+		],
+		"answer": "Preventing more than 2 of the threads from running function f() simultaneously"
+	},
+	{
+		"question": "Which of the preceding scheduling policies provides the lowest waiting time for this set of jobs?",
+		"options": [
+			"Preemptive PRIORITY",
+			"Non-preemptive SJF",
+			"FCFS",
+			"Non-preemptive PRIORITY"
+		],
+		"answer": "Non-preemptive SJF"
+	},
+	{
+		"question": "What is the waiting time with this policy, that provides the lowest time?",
+		"options": [
+			"34/6",
+			"33/6",
+			"36/6",
+			"35/6"
+		],
+		"answer": "33/6"
+	},
+	{
+		"question": "Which of the following parameters will affect the effective access time (EAT), i.e., the average memory access time, of a demand paging system?",
+		"options": [
+			"None of the alternatives",
+			"Segment table size (number of entries)",
+			"Size of paging disk",
+			"Page fault rate (probability of a page fault)"
+		],
+		"answer": "Page fault rate (probability of a page fault)"
+	},
+	{
+		"question": "Which of the following alternatives is a mechanism / technique for inter-process communication (IPC)?",
+		"options": [
+			"None of the other alternatives",
+			"Message-passing",
+			"Contiguous synchronization",
+			"Hardware interrupt"
+		],
+		"answer": "Message-passing"
+	},
+	{
+		"question": "What is the purpose of a memory management unit (MMU)?",
+		"options": [
+			"Manage the swap space on disk",
+			"Allocate dynamic memory on the heap",
+			"Keep track of free blocks on the disk",
+			"Translate virtual (logical) addresses to physical addresses in memory"
+		],
+		"answer": "Translate virtual (logical) addresses to physical addresses in memory"
+	},
+	{
+		"question": "Assume a page-based virtual memory system with 8kB pages. An operating system designer would like to decrease the page size to 2kB. Which of the following alternatives is true if the page size is decreased to 2kB?",
+		"options": [
+			"Both external and internal fragmentation increase",
+			"External fragmentation increases",
+			"Neither internal nor external fragmentation are affected",
+			"Internal fragmentation decreases"
+		],
+		"answer": "Internal fragmentation decreases"
+	},
+	{
+		"question": "Which one of the following typical services is provided by an OS?",
+		"options": [
+			"Accounting: keeping track of system resource usage",
+			"Security: protection of system from malicious users or actions",
+			"User interface: command-line, batch, or GUI",
+			"Error detection: detecting, reporting, recovering from system problems",
+			"All Alternatives"
+		],
+		"answer": "All Alternatives"
+	},
+	{
+		"question": "Paging in memory management is:",
+		"options": [
+			"Copying the entire process image between memory and disk and dividing it into several pieces with fixed-size",
+			"Dividing logical address space of the process into fixed-size pieces.",
+			"Copying the entire process image between memory and disk and dividing it into several pieces with non fixed-size",
+			"Dividing logical address space of the process into variable-size pieces."
+		],
+		"answer": "Dividing logical address space of the process into fixed-size pieces."
+	},
+	{
+		"question": "Operating systems can be divided according to process management.",
+		"options": [
+			"Single-task and multi-task",
+			"Centralized and distributed",
+			"None of all alternatives",
+			"Single-user and multi-user"
+		],
+		"answer": "Single-task and multi-task"
+	},
+	{
+		"question": "The term 'FAT' stands for:",
+		"options": [
+			"File Allocation Tree",
+			"File Allocation Table",
+			"File Allocation Graph",
+			"All alternatives"
+		],
+		"answer": "File Allocation Table"
+	},
+	{
+		"question": "Which of the following is not an element of a process image?",
+		"options": [
+			"PCB",
+			"Thread state",
+			"User data",
+			"User Program"
+		],
+		"answer": "Thread state"
+	},
+	{
+		"question": "_________________ consists of the most used and most fundamental components of the operating system.",
+		"options": [
+			"Processor",
+			"Memory",
+			"Server",
+			"Kernel"
+		],
+		"answer": "Kernel"
+	}
+]
