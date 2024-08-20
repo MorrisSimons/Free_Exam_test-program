@@ -25,5 +25,4 @@
 	"Vad är skillnaden mellan FFT och DFT? 2p": "FFT är en algoritm som beräknar DFT på ett mycket mer effektivt sätt. DFT kräver N^2 antal operationer medan FFT kräver N*log(N) operationer.",
 	"Vad händer med spektrum X(ω) för en tidskontinuerlig signal x(t) efter sampling? 1p": "Spektrumet periodiseras med 2π/ω i ω-domänen."
 
-
 }

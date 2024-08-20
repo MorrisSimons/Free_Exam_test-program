@@ -1,0 +1,22 @@
+{
+	
+    "Varför är Steepest Descent Algoritm opraktisk i verkliga applikationer? 1p": "SDA är baserad på den verkliga del-estimatet vilket inte är tillgängligt.",
+    "Vad konvergerar en LMS filter till om både x[n] och d[n] är statistiskt stationära? 1p": "Konvergerar till optimala lösningen.",
+    "När lämpar det sig att använda normaliserad LMS? 1p": "Då effekten i signalen varierar.",
+    "Vad är leaky faktorn bra för i LLMS? 1p": "Gör att felhets eller medelvärde drivs mot noll och därmed konvergerar filtret.",
+    "Nämn en applikation där LMS baserade filter kan tillämpas. 1p": "Systemidentifiering eller där störningar/interferens cancelleras.",
+    "Varför har LMS baserade algoritmer kvadratisk felfunktion 𝜉[𝑛]? 1p": "Gör en funktion med 'känsla' för där optimala lösningen befinner sig i den bästa positionen på kurvan.",
+    "Varför är det bra när LMS filter har en liten misadjustment term? 1p": "LMS på grund av arbetssättet säkerställer att den konvergerar mot optimala lösningen. Liten misadjustment reducerar detta avvikande och leder till att LMS håller sig nära den optimala lösningen.",
+	
+		"Vad är skillnad mellan klassisk filter och adaptiv filter? 1p": "Klassiska filter har fasta koefficienter som bestäms vid filterdesign. Adaptiva filter anpassar sina koefficienter under pågående filtrering av signalen.",
+		"Vad står LMS, NLMS och LLMS akronymen för? 2p": "LMS: Least Mean Square, NLMS: Normalized LMS, LLMS: Leaky LMS.",
+		"Nämn en applikation där LMS baserade filter kan tillämpas. 1p": "ANC - Adaptive Noise Cancellation.",
+		"Kan felfunktion 𝜉[n] bli negativ? Motivera ditt svar. 1p": "Nej, kvadratiska felfunktioner kan ej bli negativa.",
+		"Vilken LMS filter är bättre, en som har liten eller stor misadjustment term? Motivera ditt svar.": "LMS med liten misadjustment är bättre, eftersom den har liten avvikelse från optimala punkten.",
+
+		"Vilken utseende har felfunktion 𝜉[n] för LMS baserade algoritmer? 1p": "Felfunktionen 𝜉[n] är kvadratisk.",
+		"Beskriv kortfattat skillnader/likheter mellan gradient metoden och LMS. 2p": "Båda använder kvadratisk felfunktion, skillnad är att LMS använder förenklad gradient i jämförelse med gradientmetoden, vilket gör att man har följd till den riktiga gradienten.",
+		"I vilket applikation används systemet i nedanstående bild? 1p": "Det är en system identifieringsapplikation.",
+		"Vilken metod kan användas för att räkna fram filtrets koefficienter istället för att använda adaptiv filter om x(n) och d(n) är WSS? 1p": "Använd Wiener-Hopf ekvationen för att ta fram optimala vikter direkt.",
+		"Vilka två andra varianter av LMS filter finns det? 2p": "NLMS - Normalized LMS, Leaky LMS."
+}

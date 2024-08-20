@@ -1,0 +1,23 @@
+{
+	"Vad är skillnaden mellan LMS filter och linjär neuron? 1p": "LMS filter är en SISO system (Single Input Single Output) där input matas en värde åt gång. Filtret i sig har fördröjningsledningar. Linjär neuron får alla sina ingångar tilldelade direkt.",
+	"Vad menas med supervised och unsupervised learning? 2p": "Vid supervised learning matchas utsignalen mot en önskad utgång och fellet nyttjas för korrigering av vikterna. I unsupervised learning fattas den önskade (labeled) utgången. Korrigeringen av vikterna utförs då ofta av stabilitets-info.",
+	"Vad är Back-propagation algoritm och vad baserar den sig på? 2p": "Back-propagation algoritmen används vid träning av multi-layered neuralt nätverk. Baserar sig på ett gradient descent.",
+	"Vad menas med att neurala nätverket har dålig generalisering? 1p": "Att neuralt nätverket ger dålig respons på data som inte användes vid träning.",
+	"Problemet med generalisering i neurala nätverket kan ses ur två perspektiv. Vilka är de? 2p": "1) Arkitekturen av nätverket. 2) Storleken av träningsdatabas.",
+	"Beskriv hur du sätter upp din databas som du tänker använda vid träning av neurala nätverket så du minimaliserar chansen att nätverket övertränas? 2p": "Dela upp databasen i en träningsdatabas och en valideringsdatabas sett. Sluta träna när felet från valideringsdatabasen börjar öka.",
+	
+	"Vad är den fundamentala skillnaden mellan perceptron och neuron? 1p": "Perceptron har begränsning på vilka värden ges på ingång, värden på vikterna samt den specifika icke-linjära funktionen på utsignalen. Neuronet kan anta alla sorters värden på ingång, vikter och alla deriverbara funktioner på utsignalen.",
+	"Skissa en neuron modell med alla detaljer (från insignal till utsignal). 2p": "Se bifogad skiss i bilden. Xn är ingångsvärden, θ är bias, wx är vikterna, f(x) är funktionen (linjär eller icke-linjär) som tillämpas, och y är utsignalen från neuronen.",
+	"Vad är Pocket algoritm och vad används den till? 2p": "Pocket algoritmen är en metod som används för att lösa Perceptron nät. Uppdatering sker stochastiskt så den håller koll på den bästa lösningen. 'Stoppar bästa lösning i fickan'.",
+	"Förklara kortfattat begreppet Early stopping och dess användning. 2p": "Early stopping är en strategi för att avgöra när träningen av neurala nätverk ska stoppas. Man nyttjar förutom träningsdatabasen även en valideringsdatabas. Valideringsdatabasen används för att se om nätet har generaliserats. Träningen stoppas när felet på valideringsdatabasen börjar öka.",
+	"Vad är Bipolar/Unipolar Sigmoid funktion och vad har man den till? 2p": "Dessa är icke-linjära funktioner som används för att introducera icke-linjäritet i neurala nätverk.",
+	"Nedanstående bild visar data i en träningsdatabas med två klasser (klass P och N) som ska separeras. Motivera i ditt svar ifall klassifierare behöver ha en bias term, ickelinjarität eller räcker det med ett linjärt nät? 2p": "Klassifierare behöver både bias och icke-linjära funktioner eftersom de två klasserna går ej att separera med ett linjärt nät.",
+	
+	"Vilka två underkategorier delar sig Supervised Learning i? 2p": "Reinforced och Corrective Learning.",
+	"Nämn två applikationer som neurala nätverket kan användas som. 2p": "Approximation av flervariabel funktion. Mönster klassifikation.",
+	"Vad är bias och vad används den till i neurala nätverket? 2p": "Bias är en extra vikt med fast input i neuronen. Den gör att utsignalen från neuronet affekteras från origo och ger större frihet.",
+	"Förklara kortfattat begreppet generalisering av nätverket. 1p": "Ett neuralt nätverk med bra generalisering kommer ge 'bra' svar även på input data som det inte har tränats på.",
+	"Förklara varför vill man dela upp databasen i en träningsdatabas och en valideringsdatabas? 2p": "För att motverka överträning. När valideringsfelet börjar divergera från träningsfelet är det dags att sluta träningen.",
+	"Vad används The Back-Propagation Algoritm till? Algoritmen består av fyra moment där initialisering av vikterna är första momentet. Beskriv kortfattat de kvarstående tre moment. 3p": "1) Beräkning av vikter. 2) Välj träningspar slumpmässigt. 3) Beräkna felet och dess lokalisation för varje lager. 4) Uppdatera vikterna givet felet."
+
+}

@@ -1,9 +1,10 @@
 import json
 import streamlit as st
 import random
+import argparse, sys
 
-def load_data():
-    with open("data.json", "r") as f:
+def load_data(data):
+    with open(f"{data}.json", "r") as f:
         return json.load(f)
 
 def reset_quiz():
@@ -31,12 +32,12 @@ def load_next_question():
         st.session_state.correct = False  # Reset correctness
         st.session_state.alternatives = get_question_with_alternatives(st.session_state.data, st.session_state.current_answer)  # Get new alternatives
 
-def main():
+def main(data):
     st.title("Flashcard Question and Answer App")
     
     # Load data once into session state
     if 'data' not in st.session_state:
-        st.session_state.data = load_data()
+        st.session_state.data = load_data(data)
     
     total_questions = len(st.session_state.data)
     
@@ -77,4 +78,5 @@ def main():
     st.write("---")
 
 if __name__ == "__main__":
-    main()
+    data = "signalbehandling/part5"
+    main(data)
