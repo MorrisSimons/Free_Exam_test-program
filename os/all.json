@@ -2,583 +2,661 @@
 	{
 		"question": "Which of the following operations is allowed in user mode?",
 		"options": [
-				"Change the page table",
-				"Turn off interrupts",
-				"Modify the interrupt vector (interrupt descriptor table)",
-				"None of the listed operations is allowed in user mode",
-				"Directly access a sector on a disk (i.e., directly access the hardware)"
+			"Change the page table",
+			"Turn off interrupts",
+			"Modify the interrupt vector (interrupt descriptor table)",
+			"None of the listed operations is allowed in user mode",
+			"Directly access a sector on a disk (i.e., directly access the hardware)"
 		],
-		"answer": "None of the listed operations is allowed in user mode"
+		"answer": "None of the listed operations is allowed in user mode",
+		"explanation": "User mode is a restricted mode where the process cannot perform critical operations like modifying system resources or directly interacting with hardware. These operations are reserved for kernel mode."
 	},
 	{
 		"question": "What is the main difference between preemptive and non-preemptive scheduling?",
 		"options": [
-				"If the process executes in an isolated memory space or not.",
-				"If a process/thread gives up the CPU (and lets some other execute instead) voluntarily or not.",
-				"If the process/thread with the highest priority is scheduled first or not.",
-				"If the process/thread with the shortest remaining execution time is scheduled first or not.",
-				"If a process is allowed to fork child processes or not."
+			"If the process executes in an isolated memory space or not.",
+			"If a process/thread gives up the CPU (and lets some other execute instead) voluntarily or not.",
+			"If the process/thread with the highest priority is scheduled first or not.",
+			"If the process/thread with the shortest remaining execution time is scheduled first or not.",
+			"If a process is allowed to fork child processes or not."
 		],
-		"answer": "If a process/thread gives up the CPU (and lets some other execute instead) voluntarily or not."
+		"answer": "If a process/thread gives up the CPU (and lets some other execute instead) voluntarily or not.",
+		"explanation": "In preemptive scheduling, the operating system can forcibly take the CPU away from a process, whereas in non-preemptive scheduling, the process voluntarily gives up the CPU."
 	},
 	{
 		"question": "Which of the following events will take place when switching from one process (old) to another (new)?",
 		"options": [
-				"Turn off the interrupts when the new process is restarted.",
-				"Remove all virtual memory pages of the old process from the main memory.",
-				"All of the events happen",
-				"Copy data from the PCB of the new process into the interrupt vector table.",
-				"Store CPU register states of the old process into the PCB."
+			"Turn off the interrupts when the new process is restarted.",
+			"Remove all virtual memory pages of the old process from the main memory.",
+			"All of the events happen",
+			"Copy data from the PCB of the new process into the interrupt vector table.",
+			"Store CPU register states of the old process into the PCB."
 		],
-		"answer": "Store CPU register states of the old process into the PCB."
+		"answer": "Store CPU register states of the old process into the PCB.",
+		"explanation": "During a context switch, the state of the current (old) process is saved into its Process Control Block (PCB) so that it can resume later, and the new process's state is restored."
 	},
 	{
 		"question": "Given a system with n runnable processes. In how many ways can we schedule these processes, i.e., in how many orders can we execute them?",
 		"options": [
-				"n3",
-				"n2",
-				"n log n",
-				"n!",
-				"2n"
+			"n3",
+			"n2",
+			"n log n",
+			"n!",
+			"2n"
 		],
-		"answer": "n!"
-	},{
+		"answer": "n!",
+		"explanation": "The number of ways to schedule n processes is n factorial (n!), representing all possible permutations of the processes."
+	},
+	{
 		"question": "Which of the following alternatives is a disadvantage of priority scheduling?",
 		"options": [
-				"Priority scheduling can never be used in multiprocessor systems",
-				"Some processes may not be executed at all if the load is very high",
-				"It usually decreases the CPU utilization",
-				"All of the alternatives are disadvantages with priority scheduling",
-				"It always favors CPU-bound processes"
+			"Priority scheduling can never be used in multiprocessor systems",
+			"Some processes may not be executed at all if the load is very high",
+			"It usually decreases the CPU utilization",
+			"All of the alternatives are disadvantages with priority scheduling",
+			"It always favors CPU-bound processes"
 		],
-		"answer": "Some processes may not be executed at all if the load is very high"
-	},{
+		"answer": "Some processes may not be executed at all if the load is very high",
+		"explanation": "In priority scheduling, if the load is high, lower-priority processes may suffer from starvation, meaning they may never get executed if higher-priority processes continue to dominate."
+	},
+	{
 		"question": "Which of the following alternatives is a mechanism / technique for inter-process communication (IPC)?",
 		"options": [
-				"Message-passing",
-				"Dual-mode operation",
-				"Hardware interrupt",
-				"Contiguous synchronization",
-				"None of the other alternatives"
+			"Message-passing",
+			"Dual-mode operation",
+			"Hardware interrupt",
+			"Contiguous synchronization",
+			"None of the other alternatives"
 		],
-		"answer": "Message-passing"
+		"answer": "Message-passing",
+		"explanation": "Message-passing is a common IPC mechanism that allows processes to communicate with each other by sending and receiving messages."
 	},
 	{
 		"question": "What is the purpose of a memory management unit (MMU)?",
 		"options": [
-				"Manage the swap space on disk",
-				"Allocate dynamic memory on the heap",
-				"Keep track of free blocks on the disk",
-				"Translate virtual (logical) addresses to physical addresses in memory",
-				"Manage the graphics memory in 3D-graphics applications"
+			"Manage the swap space on disk",
+			"Allocate dynamic memory on the heap",
+			"Keep track of free blocks on the disk",
+			"Translate virtual (logical) addresses to physical addresses in memory",
+			"Manage the graphics memory in 3D-graphics applications"
 		],
-		"answer": "Translate virtual (logical) addresses to physical addresses in memory"
+		"answer": "Translate virtual (logical) addresses to physical addresses in memory",
+		"explanation": "The MMU is responsible for translating virtual addresses used by programs into physical addresses used by the hardware, allowing for efficient memory management."
 	},
 	{
 		"question": "Assume a page-based virtual memory system with 8kB pages. An operating system designer would like to decrease the page size to 2kB. Which of the following alternatives is true if the page size is decreased to 2kB?",
 		"options": [
-				"Both external and internal fragmentation increase",
-				"Neither internal nor external fragmentation are affected",
-				"Internal fragmentation decreases",
-				"External fragmentation increases",
-				"Internal fragmentation increases"
+			"Both external and internal fragmentation increase",
+			"Neither internal nor external fragmentation are affected",
+			"Internal fragmentation decreases",
+			"External fragmentation increases",
+			"Internal fragmentation increases"
 		],
-		"answer": "Internal fragmentation decreases"
+		"answer": "Internal fragmentation decreases",
+		"explanation": "Smaller page sizes generally lead to less internal fragmentation because less unused space is wasted within each page."
 	},
 	{
 		"question": "Which of the following terms below refers to a method used for allocation of disk space for a file?",
 		"options": [
-				"Virtual allocation",
-				"Page-based allocation",
-				"Buddy-block allocation",
-				"None of the alternatives is a valid allocation method",
-				"Segmented allocation"
+			"Virtual allocation",
+			"Page-based allocation",
+			"Buddy-block allocation",
+			"None of the alternatives is a valid allocation method",
+			"Segmented allocation"
 		],
-		"answer": "None of the alternatives is a valid allocation method"
+		"answer": "None of the alternatives is a valid allocation method",
+		"explanation": "The listed methods are not standard terms for disk space allocation methods. Common methods include contiguous allocation, linked allocation, and indexed allocation."
 	},
 	{
 		"question": "Which of the following devices is a typical character device?",
 		"options": [
-				"Solid-state disk",
-				"High-resolution display",
-				"Keyboard",
-				"CD-ROM drive",
-				"None of the alternatives is a character device"
+			"Solid-state disk",
+			"High-resolution display",
+			"Keyboard",
+			"CD-ROM drive",
+			"None of the alternatives is a character device"
 		],
-		"answer": "Keyboard"
-	},{
-		"question": "Your system is running slow and the response times are long. Which of the following alternatives might have happened?",
-		"options": [
-				"Your main memory is too small to fit the total working set",
-				"The number of read / write requests to your disk is very high",
-				"You have too many active large processes",
-				"Your computer receives a lot of network traffic",
-				"All alternatives are possible"
-		],
-		"answer": "All alternatives are possible"
-	},{
-		"question": "Which of the following alternatives is a way to prevent deadlocks?",
-		"options": [
-				"Use semaphores to protect all shared resources",
-				"Allocate all resources in a specific order",
-				"All of the alternatives prevent deadlocks",
-				"Execute only one process at a time, i.e., no concurrency is allowed (multiple processes may be ready or blocked, but only one is running)",
-				"Make transactions indivisible"
-		],
-		"answer": "All of the alternatives prevent deadlocks"
+		"answer": "Keyboard",
+		"explanation": "A character device is one that transmits data character by character. Keyboards are typical examples of character devices because they send one character at a time as keys are pressed."
 	},
 	{
-    "question": "When a process is created using the classical fork() system call, which of the following is not inherited by the child process?",
-    "options": [
-        "Process address space",
-        "User ID",
-        "Process ID",
-        "None of the other alternatives",
-        "Signal handlers"
-    ],
-    "answer": "Process ID"
-},
-{
-	"question": "In memory management, global page replacement is usually preferable to local page replacement because:",
-	"options": [
+		"question": "Your system is running slow and the response times are long. Which of the following alternatives might have happened?",
+		"options": [
+			"Your main memory is too small to fit the total working set",
+			"The number of read / write requests to your disk is very high",
+			"You have too many active large processes",
+			"Your computer receives a lot of network traffic",
+			"All alternatives are possible"
+		],
+		"answer": "All alternatives are possible",
+		"explanation": "All of the listed conditions can contribute to system slowdown, such as insufficient memory, high disk I/O, large processes, or heavy network traffic, which all strain system resources."
+	},
+	{
+		"question": "Which of the following alternatives is a way to prevent deadlocks?",
+		"options": [
+			"Use semaphores to protect all shared resources",
+			"Allocate all resources in a specific order",
+			"All of the alternatives prevent deadlocks",
+			"Execute only one process at a time, i.e., no concurrency is allowed (multiple processes may be ready or blocked, but only one is running)",
+			"Make transactions indivisible"
+		],
+		"answer": "All of the alternatives prevent deadlocks",
+		"explanation": "Deadlocks can be prevented by ensuring that certain conditions necessary for deadlocks do not hold, which all these techniques aim to achieve."
+	},
+	{
+		"question": "When a process is created using the classical fork() system call, which of the following is not inherited by the child process?",
+		"options": [
+			"Process address space",
+			"User ID",
+			"Process ID",
+			"None of the other alternatives",
+			"Signal handlers"
+		],
+		"answer": "Process ID",
+		"explanation": "The child process created by fork() gets a new unique process ID, distinct from its parent's. All other aspects, such as the address space and user ID, are inherited."
+	},
+	{
+		"question": "In memory management, global page replacement is usually preferable to local page replacement because:",
+		"options": [
 			"Most processes have small working sets",
 			"Most processes have large working sets",
 			"Most processes are highly synchronized",
 			"Most processes are well-behaved",
 			"The set of pages from which to choose is larger"
-	],
-	"answer": "The set of pages from which to choose is larger"
-},
-{
-	"question": "Three important design principles in operating systems are:",
-	"options": [
+		],
+		"answer": "The set of pages from which to choose is larger",
+		"explanation": "Global page replacement allows for a larger pool of pages across all processes, which can lead to more efficient use of memory by selecting the best candidate pages for replacement."
+	},
+	{
+		"question": "Three important design principles in operating systems are:",
+		"options": [
 			"Parallelism, concurrency, and multi-anything",
 			"Caching, virtualization, and support for concurrency",
 			"Abstraction, fairness, and context-switching",
 			"All alternatives",
 			"Throughput, response time, and support for priority"
-	],
-	"answer": "Caching, virtualization, and support for concurrency"
-},
-{
-	"question": "Changing the permissions on your files is easy in Linux because:",
-	"options": [
+		],
+		"answer": "Caching, virtualization, and support for concurrency",
+		"explanation": "Caching, virtualization, and support for concurrency are fundamental principles that enhance performance, resource management, and multitasking in operating systems."
+	},
+	{
+		"question": "Changing the permissions on your files is easy in Linux because:",
+		"options": [
 			"There is a shell program for doing so",
 			"All alternatives",
 			"There is a built-in command-line utility for doing so",
 			"There is a C programming library routine for doing so",
 			"There is a superuser on call for doing so"
-	],
-	"answer": "All alternatives"
-},
-{
-	"question": "In message-passing IPC on a Linux system, the maximum message size permitted is:",
-	"options": [
+		],
+		"answer": "All alternatives",
+		"explanation": "Linux provides multiple methods for changing file permissions, including shell commands, command-line utilities, and programming APIs, making it flexible and powerful."
+	},
+	{
+		"question": "In message-passing IPC on a Linux system, the maximum message size permitted is:",
+		"options": [
 			"64 bytes",
 			"1 byte",
 			"None of the other alternatives",
 			"140 bytes",
 			"32 bytes"
-	],
-	"answer": "None of the other alternatives"
-},
-{
-	"question": "The text segment of a process address space contains:",
-	"options": [
+		],
+		"answer": "None of the other alternatives",
+		"explanation": "The maximum message size in message-passing IPC depends on the system's configuration and is often much larger than the options provided."
+	},
+	{
+		"question": "The text segment of a process address space contains:",
+		"options": [
 			"The inter-process communication (IPC) messages for the process",
 			"The dynamically allocated data associated with the process",
 			"The text-messaging chat messages for the process",
 			"All alternatives",
 			"The executable code associated with the process"
-	],
-	"answer": "The executable code associated with the process"
-},
-{
-	"question": "Counting semaphores:",
-	"options": [
+		],
+		"answer": "The executable code associated with the process",
+		"explanation": "The text segment, or code segment, of a process address space holds the executable code, which is the set of instructions the CPU executes."
+	},
+	{
+		"question": "Counting semaphores:",
+		"options": [
 			"All alternatives",
 			"Have increment and decrement operations",
 			"Can use queueing to manage waiting processes",
 			"Are used for managing multiple instances of a resource",
 			"Generalize the notion of a binary semaphore"
-	],
-	"answer": "All alternatives"
-},{
-	"question": "The Banker’s Algorithm is an example of a technique for:",
-	"options": [
+		],
+		"answer": "All alternatives",
+		"explanation": "Counting semaphores are more versatile than binary semaphores, supporting operations to increment and decrement counts, managing multiple instances of resources, and using queues to handle waiting processes."
+	},
+	{
+		"question": "The Banker’s Algorithm is an example of a technique for:",
+		"options": [
 			"Deadlock prevention",
 			"Deadlock recovery",
 			"Deadlock detection",
 			"Deadlock avoidance",
 			"Stabilizing turbulent financial markets"
-	],
-	"answer": "Deadlock avoidance"
-},{
-	"question": "With asynchronous I/O, file system changes will be committed to disk when:",
-	"options": [
+		],
+		"answer": "Deadlock avoidance",
+		"explanation": "The Banker's Algorithm is used to avoid deadlocks by preemptively checking resource allocation to ensure that it is safe to proceed with current allocations without causing a deadlock."
+	},
+	{
+		"question": "With asynchronous I/O, file system changes will be committed to disk when:",
+		"options": [
 			"The system is rebooted",
 			"The in-memory inode is updated",
 			"Nightly file system backups are run",
 			"The sync daemon runs",
 			"The system administrator feels like doing it"
-	],
-	"answer": "The sync daemon runs"
-},{
-	"question": "Implementing LRU precisely in an OS is expensive, so practical implementations often use an approximation called:",
-	"options": [
+		],
+		"answer": "The sync daemon runs",
+		"explanation": "In asynchronous I/O, data is not immediately written to disk but is buffered in memory. The sync daemon periodically writes these changes to the disk."
+	},
+	{
+		"question": "Implementing LRU precisely in an OS is expensive, so practical implementations often use an approximation called:",
+		"options": [
 			"NFU",
 			"None of the other alternatives",
 			"MFU",
 			"MRU",
 			"LFU with aging"
-	],
-	"answer": "None of the other alternatives"
-},{
-	"question": "For two processes accessing a shared variable, Peterson’s algorithm provides:",
-	"options": [
+		],
+		"answer": "None of the other alternatives",
+		"explanation": "The exact implementation of LRU (Least Recently Used) is costly in terms of resources, so operating systems often use approximations like Clock or Second Chance algorithms instead."
+	},
+	{
+		"question": "For two processes accessing a shared variable, Peterson’s algorithm provides:",
+		"options": [
 			"Progress",
 			"Bounded waiting",
 			"Mutual exclusion",
 			"All choices"
-	],
-	"answer": "All choices"
-},{
-	"question": "Three file descriptors associated with every Linux process are:",
-	"options": [
+		],
+		"answer": "All choices",
+		"explanation": "Peterson’s algorithm ensures mutual exclusion, progress, and bounded waiting when two processes are accessing a shared variable, making it an effective method for process synchronization."
+	},
+	{
+		"question": "Three file descriptors associated with every Linux process are:",
+		"options": [
 			"Standard input, standard output, and standard error",
 			"Standard input, standard output, and standard transmission",
 			"Standard input, standard output, and standard deviation",
 			"Standard input, standard output, and standard terminal",
 			"Standard input, standard output, and standard pipe"
-	],
-	"answer": "Standard input, standard output, and standard error"
-},{
-	"question": "The system calls chown(), and chmod() are examples of operating system functionality for:",
-	"options": [
+		],
+		"answer": "Standard input, standard output, and standard error",
+		"explanation": "Every Linux process is automatically provided with three standard file descriptors: standard input (stdin), standard output (stdout), and standard error (stderr)."
+	},
+	{
+		"question": "The system calls chown(), and chmod() are examples of operating system functionality for:",
+		"options": [
 			"Protection and security",
 			"Process control",
 			"Device manipulation",
 			"Information maintenance",
 			"File manipulation"
-	],
-	"answer": "Protection and security"
-},{
-	"question": "Among CPU scheduling policies, First Come First Serve (FCFS) is attractive because:",
-	"options": [
+		],
+		"answer": "Protection and security",
+		"explanation": "The chown() and chmod() system calls are used to change file ownership and permissions, respectively, which are crucial for maintaining file security and access control in an operating system."
+	},
+	{
+		"question": "Among CPU scheduling policies, First Come First Serve (FCFS) is attractive because:",
+		"options": [
 			"It is simple to implement",
 			"It is fair to all processes",
 			"It minimizes the average waiting time in the system",
 			"It minimizes the average response time in the system",
 			"It minimizes the total waiting time in the system"
-	],
-	"answer": "It is simple to implement"
-},{
-	"question": "Which operating system is using the Optimal (Bélády’s) page replacement policy?",
-	"options": [
+		],
+		"answer": "It is simple to implement",
+		"explanation": "FCFS scheduling is straightforward and easy to implement because it queues processes in the order they arrive, without the need for complex priority calculations."
+	},
+	{
+		"question": "Which operating system is using the Optimal (Bélády’s) page replacement policy?",
+		"options": [
 			"Windows",
 			"None of the other alternatives",
 			"Centos",
 			"Mac OS",
 			"Linux"
-	],
-	"answer": "None of the other alternatives"
-},{
-	"question": "Which one of the page replacement policies is faster:",
-	"options": [
+		],
+		"answer": "None of the other alternatives",
+		"explanation": "The Optimal (Bélády’s) page replacement policy is a theoretical concept and is not used in any real operating systems because it requires future knowledge of memory accesses, which is impractical."
+	},
+	{
+		"question": "Which one of the page replacement policies is faster:",
+		"options": [
 			"FIFO",
 			"NRU",
 			"LRU",
 			"Optimal (Bélády’s)"
-	],
-	"answer": "FIFO"
-},{
-	"question": "Direct Memory Access (DMA) requires a special controller that facilitates the transfer of blocks between the I/O device and main memory.",
-	"options": [
+		],
+		"answer": "FIFO",
+		"explanation": "FIFO (First-In, First-Out) is generally faster than more sophisticated policies like LRU (Least Recently Used) because it only requires tracking the order of page arrivals, without considering their usage history."
+	},
+	{
+		"question": "Direct Memory Access (DMA) requires a special controller that facilitates the transfer of blocks between the I/O device and main memory.",
+		"options": [
 			"True",
 			"False"
-	],
-	"answer": "True"
-},{
-	"question": "An operating system can be viewed as a resource allocator to control various I/O devices and user programs.",
-	"options": [
+		],
+		"answer": "True",
+		"explanation": "DMA allows devices to transfer data to/from memory without involving the CPU, using a special controller that manages these operations independently, improving system efficiency."
+	},
+	{
+		"question": "An operating system can be viewed as a resource allocator to control various I/O devices and user programs.",
+		"options": [
 			"True",
 			"False"
-	],
-	"answer": "True"
-},
-{
-	"question": "Multiprogramming is a technique used in an operating system for sharing a single processor between several independent jobs.",
-	"options": [
+		],
+		"answer": "True",
+		"explanation": "One of the core functions of an operating system is resource allocation, managing hardware resources like CPU, memory, and I/O devices to ensure efficient and fair distribution among processes."
+	},
+	{
+		"question": "Multiprogramming is a technique used in an operating system for sharing a single processor between several independent jobs.",
+		"options": [
 			"False",
 			"True"
-	],
-	"answer": "True"
-},{
-	"question": "When a child process is created using the fork() system call, the child process inherits all the open file descriptors of the parent process.",
-	"options": [
+		],
+		"answer": "True",
+		"explanation": "Multiprogramming allows multiple jobs to be loaded into memory simultaneously, with the OS switching between them to maximize CPU utilization and reduce idle time."
+	},
+	{
+		"question": "When a child process is created using the fork() system call, the child process inherits all the open file descriptors of the parent process.",
+		"options": [
 			"True",
 			"False"
-	],
-	"answer": "True"
-},{
-	"question": "Thread scheduling overhead is higher for user threads than kernel threads.",
-	"options": [
+		],
+		"answer": "True",
+		"explanation": "In Unix-like operating systems, when a process forks, the child process inherits all the open file descriptors from the parent, allowing it to continue reading from or writing to the same files."
+	},
+	{
+		"question": "Thread scheduling overhead is higher for user threads than kernel threads.",
+		"options": [
 			"True",
 			"False"
-	],
-	"answer": "False"
-},{
-	"question": "The Linked-list Allocation scheme causes external fragmentation.",
-	"options": [
+		],
+		"answer": "False",
+		"explanation": "Kernel threads generally have higher scheduling overhead because they involve the operating system's scheduler, whereas user threads are managed by a user-level thread library, which is typically faster but less powerful."
+	},
+	{
+		"question": "The Linked-list Allocation scheme causes external fragmentation.",
+		"options": [
 			"False",
 			"True"
-	],
-	"answer": "False"
-},
-{
-	"question": "Segmentation leads to problems with external fragmentation; using segmented paged memory overcomes this (at the cost of some internal fragmentation).",
-	"options": [
+		],
+		"answer": "False",
+		"explanation": "Linked-list allocation does not cause external fragmentation because each block can be placed anywhere on the disk, with pointers connecting the blocks, thus avoiding the contiguous space requirement."
+	},
+	{
+		"question": "Segmentation leads to problems with external fragmentation; using segmented paged memory overcomes this (at the cost of some internal fragmentation).",
+		"options": [
 			"False",
 			"True"
-	],
-	"answer": "True"
-},{
-	"question": "The round robin scheduling algorithm avoids the convoy effect.",
-	"options": [
+		],
+		"answer": "True",
+		"explanation": "Segmentation can cause external fragmentation because segments vary in size and may not fit perfectly into free memory blocks. Combining segmentation with paging helps reduce external fragmentation but introduces some internal fragmentation."
+	},
+	{
+		"question": "The round robin scheduling algorithm avoids the convoy effect.",
+		"options": [
 			"False",
 			"True"
-	],
-	"answer": "True"
-},
-{
-	"question": "A scheduling method in which a process can be interrupted whether it has completed its current task or not is",
-	"options": [
-		"dynamic",
-		"static",
-		"preemptive",
-		"non-preemptive"
-	],
-	"answer": "preemptive"
-},
-{
-	"question": "Which of the following statements about semaphores is true?",
-	"options": [
-		"All alternatives",
-		"If several threads attempt a wait(S) operation simultaneously, only one thread should be allowed to proceed.",
-		"wait() and signal() operations should be indivisible operations.",
-		"A semaphore implementation should guarantee that threads do not suffer indefinite postponement."
-	],
-	"answer": "All alternatives"
-},
-{
-	"question": "A process is a program in execution, it exists in main memory and it may be:",
-	"options": [
-		"Either Independent process or Cooperating process",
-		"All Alternatives",
-		"Either OS process or User process",
-		"Either I/O bound process or CPU bound process"
-	],
-	"answer": "All Alternatives"
-},
-{
-	"question": "A frame is a portion of:",
-	"options": [
-		"Physical memory",
-		"Virtual Memory",
-		"Logical Memory",
-		"Registers memory"
-	],
-	"answer": "Physical memory"
-},
-{
-	"question": "Semaphores can be used for each of the following purposes except:",
-	"options": [
-		"To synchronize two or more concurrent threads",
-		"To prevent shared variables from getting corrupted",
-		"To notify the process that an event has occurred"
-	],
-	"answer": "To notify the process that an event has occurred"
-},
-{
-	"question": "In a paging system, a frame:",
-	"options": [
-		"Is always larger than a page",
-		"Is of the same size as that of the page",
-		"Is always smaller than the page",
-		"Has no relation to the page size"
-	],
-	"answer": "Is of the same size as that of the page."
-},
-{
-	"question": "Which of these activities is NOT accomplished by the Operating Systems:",
-	"options": [
-		"Mapping files onto secondary storage",
-		"Providing mechanisms for deadlock handling",
-		"Generating interrupts",
-		"Creating and deleting processes"
-	],
-	"answer": "Generating interrupts"
-},
-{
-	"question": "Which of the following instructions should be privileged?",
-	"options": [
-		"Read the clock",
-		"Set value of timer",
-		"Switch from user to kernel mode",
-		"Create a new thread"
-	],
-	"answer": "Set value of timer"
-},
-{
-	"question": "Implementing LRU precisely in an OS is expensive, so practical implementations often use an approximation called:",
-	"options": [
-		"None of the other alternatives",
-		"MFU",
-		"LFU",
-		"MRU"
-	],
-	"answer": "None of the other alternatives"
-},
-{
-	"question": "Among CPU scheduling policies, Shortest Remaining Processing Time (SRPT) is attractive because:",
-	"options": [
-		"It minimizes the average waiting time in the system",
-		"It is simple to implement",
-		"It minimizes the average response time in the system",
-		"It minimizes the number of context switches in the system"
-	],
-	"answer": "It minimizes the average waiting time in the system"
-},
-{
-	"question": "Let’s assume that there are three threads, Threads A, B, and C, running in Process Z. For which of these synchronization scenarios would you utilize a single semaphore initialized with a value of 2 (as opposed to a semaphore initialized to some other value)?",
-	"options": [
-		"Preventing Thread A or B from running function f() simultaneously",
-		"Ensuring that Thread A completes before Thread B",
-		"Ensuring that Thread A runs after Thread B and Thread C have both completed",
-		"None of the other alternatives",
-		"Preventing more than 2 of the threads from running function f() simultaneously"
-	],
-	"answer": "Preventing more than 2 of the threads from running function f() simultaneously"
-},
-{
-	"question": "Which of the preceding scheduling policies provides the lowest waiting time for this set of jobs?",
-	"options": [
-		"Preemptive PRIORITY",
-		"Non-preemptive SJF",
-		"FCFS",
-		"Non-preemptive PRIORITY"
-	],
-	"answer": "Non-preemptive SJF"
-},
-{
-	"question": "What is the waiting time with this policy, that provides the lowest time?",
-	"options": [
-		"34/6",
-		"33/6",
-		"36/6",
-		"35/6"
-	],
-	"answer": "33/6"
-},
-{
-	"question": "Which of the following parameters will affect the effective access time (EAT), i.e., the average memory access time, of a demand paging system?",
-	"options": [
-		"None of the alternatives",
-		"Segment table size (number of entries)",
-		"Size of paging disk",
-		"Page fault rate (probability of a page fault)"
-	],
-	"answer": "Page fault rate (probability of a page fault)"
-},
-{
-	"question": "Which of the following alternatives is a mechanism / technique for inter-process communication (IPC)?",
-	"options": [
-		"None of the other alternatives",
-		"Message-passing",
-		"Contiguous synchronization",
-		"Hardware interrupt"
-	],
-	"answer": "Message-passing"
-},
-{
-	"question": "What is the purpose of a memory management unit (MMU)?",
-	"options": [
-		"Manage the swap space on disk",
-		"Allocate dynamic memory on the heap",
-		"Keep track of free blocks on the disk",
-		"Translate virtual (logical) addresses to physical addresses in memory"
-	],
-	"answer": "Translate virtual (logical) addresses to physical addresses in memory"
-},
-{
-	"question": "Assume a page-based virtual memory system with 8kB pages. An operating system designer would like to decrease the page size to 2kB. Which of the following alternatives is true if the page size is decreased to 2kB?",
-	"options": [
-		"Both external and internal fragmentation increase",
-		"External fragmentation increases",
-		"Neither internal nor external fragmentation are affected",
-		"Internal fragmentation decreases"
-	],
-	"answer": "Internal fragmentation decreases"
-},
-{
-	"question": "Which one of the following typical services is provided by an OS?",
-	"options": [
-		"Accounting: keeping track of system resource usage",
-		"Security: protection of system from malicious users or actions",
-		"User interface: command-line, batch, or GUI",
-		"Error detection: detecting, reporting, recovering from system problems",
-		"All Alternatives"
-	],
-	"answer": "All Alternatives"
-},
-{
-	"question": "Paging in memory management is:",
-	"options": [
-		"Copying the entire process image between memory and disk and dividing it into several pieces with fixed-size",
-		"Dividing logical address space of the process into fixed-size pieces.",
-		"Copying the entire process image between memory and disk and dividing it into several pieces with non fixed-size",
-		"Dividing logical address space of the process into variable-size pieces."
-	],
-	"answer": "Dividing logical address space of the process into fixed-size pieces."
-},
-{
-	"question": "Operating systems can be divided according to process management.",
-	"options": [
-		"Single-task and multi-task",
-		"Centralized and distributed",
-		"None of all alternatives",
-		"Single-user and multi-user"
-	],
-	"answer": "Single-task and multi-task"
-},
-{
-	"question": "The term 'FAT' stands for:",
-	"options": [
-		"File Allocation Tree",
-		"File Allocation Table",
-		"File Allocation Graph",
-		"All alternatives"
-	],
-	"answer": "File Allocation Table"
-},
-{
-	"question": "Which of the following is not an element of a process image?",
-	"options": [
-		"PCB",
-		"Thread state",
-		"User data",
-		"User Program"
-	],
-	"answer": "Thread state"
-},
-{
-	"question": "_________________ consists of the most used and most fundamental components of the operating system.",
-	"options": [
-		"Processor",
-		"Memory",
-		"Server",
-		"Kernel"
-	],
-	"answer": "Kernel"
-}
+		],
+		"answer": "True",
+		"explanation": "Round robin scheduling avoids the convoy effect by giving each process a time slice or quantum, ensuring that no single process can dominate the CPU, thus preventing other processes from being delayed indefinitely."
+	},
+	{
+		"question": "A scheduling method in which a process can be interrupted whether it has completed its current task or not is",
+		"options": [
+			"dynamic",
+			"static",
+			"preemptive",
+			"non-preemptive"
+		],
+		"answer": "preemptive",
+		"explanation": "Preemptive scheduling allows the operating system to interrupt a process before it completes its current task, enabling more responsive and balanced CPU utilization."
+	},
+	{
+		"question": "Which of the following statements about semaphores is true?",
+		"options": [
+			"All alternatives",
+			"If several threads attempt a wait(S) operation simultaneously, only one thread should be allowed to proceed.",
+			"wait() and signal() operations should be indivisible operations.",
+			"A semaphore implementation should guarantee that threads do not suffer indefinite postponement."
+		],
+		"answer": "All alternatives",
+		"explanation": "Semaphores are synchronization tools that ensure mutual exclusion and prevent race conditions. The properties mentioned are all essential for a robust semaphore implementation."
+	},
+	{
+		"question": "A process is a program in execution, it exists in main memory and it may be:",
+		"options": [
+			"Either Independent process or Cooperating process",
+			"All Alternatives",
+			"Either OS process or User process",
+			"Either I/O bound process or CPU bound process"
+		],
+		"answer": "All Alternatives",
+		"explanation": "A process can fall into various categories such as independent or cooperating, OS or user process, and I/O bound or CPU bound. Each classification reflects different aspects of the process's behavior and function."
+	},
+	{
+		"question": "A frame is a portion of:",
+		"options": [
+			"Physical memory",
+			"Virtual Memory",
+			"Logical Memory",
+			"Registers memory"
+		],
+		"answer": "Physical memory",
+		"explanation": "In a paging system, a frame refers to a fixed-size block of physical memory that stores pages from the process's virtual memory."
+	},
+	{
+		"question": "Semaphores can be used for each of the following purposes except:",
+		"options": [
+			"To synchronize two or more concurrent threads",
+			"To prevent shared variables from getting corrupted",
+			"To notify the process that an event has occurred"
+		],
+		"answer": "To notify the process that an event has occurred",
+		"explanation": "Semaphores are primarily used for synchronization and mutual exclusion in concurrent programming but are not typically used to notify a process of events; other mechanisms like signals or interrupts are used for that purpose."
+	},
+	{
+		"question": "In a paging system, a frame:",
+		"options": [
+			"Is always larger than a page",
+			"Is of the same size as that of the page",
+			"Is always smaller than the page",
+			"Has no relation to the page size"
+		],
+		"answer": "Is of the same size as that of the page.",
+		"explanation": "In a paging system, frames in physical memory are the same size as pages in virtual memory, ensuring that pages can be mapped directly into frames."
+	},
+	{
+		"question": "Which of these activities is NOT accomplished by the Operating Systems:",
+		"options": [
+			"Mapping files onto secondary storage",
+			"Providing mechanisms for deadlock handling",
+			"Generating interrupts",
+			"Creating and deleting processes"
+		],
+		"answer": "Generating interrupts",
+		"explanation": "Operating systems handle interrupts, but they do not generate them. Interrupts are generated by hardware or software events, and the OS responds to them."
+	},
+	{
+		"question": "Which of the following instructions should be privileged?",
+		"options": [
+			"Read the clock",
+			"Set value of timer",
+			"Switch from user to kernel mode",
+			"Create a new thread"
+		],
+		"answer": "Set value of timer",
+		"explanation": "Privileged instructions, like setting the timer value, can alter system settings and should only be executed in kernel mode to maintain system security and stability."
+	},
+	{
+		"question": "Implementing LRU precisely in an OS is expensive, so practical implementations often use an approximation called:",
+		"options": [
+			"None of the other alternatives",
+			"MFU",
+			"LFU",
+			"MRU"
+		],
+		"answer": "None of the other alternatives",
+		"explanation": "LRU (Least Recently Used) is computationally expensive to implement precisely, so operating systems use approximations like the Clock algorithm or Second-Chance algorithm instead."
+	},
+	{
+		"question": "Among CPU scheduling policies, Shortest Remaining Processing Time (SRPT) is attractive because:",
+		"options": [
+			"It minimizes the average waiting time in the system",
+			"It is simple to implement",
+			"It minimizes the average response time in the system",
+			"It minimizes the number of context switches in the system"
+		],
+		"answer": "It minimizes the average waiting time in the system",
+		"explanation": "SRPT is effective in reducing the average waiting time because it prioritizes processes that can complete the quickest, minimizing the time that longer processes have to wait."
+	},
+	{
+		"question": "Let’s assume that there are three threads, Threads A, B, and C, running in Process Z. For which of these synchronization scenarios would you utilize a single semaphore initialized with a value of 2 (as opposed to a semaphore initialized to some other value)?",
+		"options": [
+			"Preventing Thread A or B from running function f() simultaneously",
+			"Ensuring that Thread A completes before Thread B",
+			"Ensuring that Thread A runs after Thread B and Thread C have both completed",
+			"None of the other alternatives",
+			"Preventing more than 2 of the threads from running function f() simultaneously"
+		],
+		"answer": "Preventing more than 2 of the threads from running function f() simultaneously",
+		"explanation": "A semaphore initialized to 2 would allow at most two threads to access the function f() at the same time, which is useful for controlling access to shared resources."
+	},
+	{
+		"question": "Which of the preceding scheduling policies provides the lowest waiting time for this set of jobs?",
+		"options": [
+			"Preemptive PRIORITY",
+			"Non-preemptive SJF",
+			"FCFS",
+			"Non-preemptive PRIORITY"
+		],
+		"answer": "Non-preemptive SJF",
+		"explanation": "Non-preemptive Shortest Job First (SJF) minimizes the average waiting time by selecting the shortest jobs to execute first, reducing the time other processes spend waiting in the queue."
+	},
+	{
+		"question": "What is the waiting time with this policy, that provides the lowest time?",
+		"options": [
+			"34/6",
+			"33/6",
+			"36/6",
+			"35/6"
+		],
+		"answer": "33/6",
+		"explanation": "The lowest waiting time is calculated based on the job execution times, and in this scenario, 33/6 is the smallest average waiting time."
+	},
+	{
+		"question": "Which of the following parameters will affect the effective access time (EAT), i.e., the average memory access time, of a demand paging system?",
+		"options": [
+			"None of the alternatives",
+			"Segment table size (number of entries)",
+			"Size of paging disk",
+			"Page fault rate (probability of a page fault)"
+		],
+		"answer": "Page fault rate (probability of a page fault)",
+		"explanation": "The page fault rate directly affects the effective access time, as more page faults lead to more time spent loading pages from disk, thereby increasing the average memory access time."
+	},
+	{
+		"question": "Which of the following alternatives is a mechanism / technique for inter-process communication (IPC)?",
+		"options": [
+			"None of the other alternatives",
+			"Message-passing",
+			"Contiguous synchronization",
+			"Hardware interrupt"
+		],
+		"answer": "Message-passing",
+		"explanation": "Message-passing is a common IPC technique that allows processes to communicate by sending and receiving messages, making it useful for coordinating activities between processes."
+	},
+	{
+		"question": "What is the purpose of a memory management unit (MMU)?",
+		"options": [
+			"Manage the swap space on disk",
+			"Allocate dynamic memory on the heap",
+			"Keep track of free blocks on the disk",
+			"Translate virtual (logical) addresses to physical addresses in memory"
+		],
+		"answer": "Translate virtual (logical) addresses to physical addresses in memory",
+		"explanation": "The MMU translates virtual addresses generated by programs into physical addresses used by the hardware, enabling efficient memory management and isolation."
+	},
+	{
+		"question": "Assume a page-based virtual memory system with 8kB pages. An operating system designer would like to decrease the page size to 2kB. Which of the following alternatives is true if the page size is decreased to 2kB?",
+		"options": [
+			"Both external and internal fragmentation increase",
+			"External fragmentation increases",
+			"Neither internal nor external fragmentation are affected",
+			"Internal fragmentation decreases"
+		],
+		"answer": "Internal fragmentation decreases",
+		"explanation": "Reducing the page size decreases internal fragmentation because less memory is wasted within each allocated page, though it may increase the overhead of managing more pages."
+	},
+	{
+		"question": "Which one of the following typical services is provided by an OS?",
+		"options": [
+			"Accounting: keeping track of system resource usage",
+			"Security: protection of system from malicious users or actions",
+			"User interface: command-line, batch, or GUI",
+			"Error detection: detecting, reporting, recovering from system problems",
+			"All Alternatives"
+		],
+		"answer": "All Alternatives",
+		"explanation": "An operating system provides a wide range of services including resource accounting, security, user interfaces, and error detection and recovery to ensure efficient and secure operation of the system."
+	},
+	{
+		"question": "Paging in memory management is:",
+		"options": [
+			"Copying the entire process image between memory and disk and dividing it into several pieces with fixed-size",
+			"Dividing logical address space of the process into fixed-size pieces.",
+			"Copying the entire process image between memory and disk and dividing it into several pieces with non fixed-size",
+			"Dividing logical address space of the process into variable-size pieces."
+		],
+		"answer": "Dividing logical address space of the process into fixed-size pieces.",
+		"explanation": "Paging divides the logical address space of a process into fixed-size pages, which are then mapped onto physical memory frames, allowing for efficient memory allocation and management."
+	},
+	{
+		"question": "Operating systems can be divided according to process management.",
+		"options": [
+			"Single-task and multi-task",
+			"Centralized and distributed",
+			"None of all alternatives",
+			"Single-user and multi-user"
+		],
+		"answer": "Single-task and multi-task",
+		"explanation": "Operating systems can be categorized based on their process management capabilities into single-task systems, which handle one task at a time, and multi-task systems, which manage multiple tasks concurrently."
+	},
+	{
+		"question": "The term 'FAT' stands for:",
+		"options": [
+			"File Allocation Tree",
+			"File Allocation Table",
+			"File Allocation Graph",
+			"All alternatives"
+		],
+		"answer": "File Allocation Table",
+		"explanation": "FAT stands for File Allocation Table, a file system architecture used in various operating systems to manage files on a disk. It keeps track of where data is stored on the disk."
+	},
+	{
+		"question": "Which of the following is not an element of a process image?",
+		"options": [
+			"PCB",
+			"Thread state",
+			"User data",
+			"User Program"
+		],
+		"answer": "Thread state",
+		"explanation": "A process image typically includes the Process Control Block (PCB), user data, and the user program code. However, thread state is not part of the process image but is managed separately within the process."
+	},
+	{
+		"question": "_________________ consists of the most used and most fundamental components of the operating system.",
+		"options": [
+			"Processor",
+			"Memory",
+			"Server",
+			"Kernel"
+		],
+		"answer": "Kernel",
+		"explanation": "The kernel is the core part of the operating system, responsible for managing system resources, facilitating hardware-software interactions, and providing essential services like process management and memory management."
+	}
 ]

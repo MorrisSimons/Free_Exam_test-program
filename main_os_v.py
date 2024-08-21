@@ -1,7 +1,6 @@
 import json
 import streamlit as st
 import random
-import argparse, sys
 
 def load_data(data):
     with open(f"{data}.json", "r") as f:
@@ -14,6 +13,7 @@ def reset_quiz():
     current_q = st.session_state.remaining_questions.pop()
     st.session_state.current_question = current_q["question"]
     st.session_state.current_answer = current_q["answer"]
+    st.session_state.explanation = current_q["explanation"]  # Store the explanation
     st.session_state.show_answer = False
     st.session_state.correct = False
     st.session_state.alternatives = get_question_with_alternatives(current_q["options"], st.session_state.current_answer)
@@ -29,11 +29,13 @@ def load_next_question():
     if st.session_state.remaining_questions:
         st.session_state.seen_questions.append({
             "question": st.session_state.current_question,
-            "answer": st.session_state.current_answer
+            "answer": st.session_state.current_answer,
+            "explanation": st.session_state.explanation
         })
         current_q = st.session_state.remaining_questions.pop()
         st.session_state.current_question = current_q["question"]
         st.session_state.current_answer = current_q["answer"]
+        st.session_state.explanation = current_q["explanation"]  # Update explanation for new question
         st.session_state.show_answer = False  # Reset answer visibility
         st.session_state.correct = False  # Reset correctness
         st.session_state.alternatives = get_question_with_alternatives(current_q["options"], st.session_state.current_answer)  # Get new alternatives
@@ -74,6 +76,9 @@ def main(data):
         else:
             st.write(f"Incorrect! The correct answer is: {st.session_state.current_answer}")
             st.session_state.correct = False
+
+        # Show explanation after the answer is revealed
+        st.write(f"**Explanation:** {st.session_state.explanation}")
     
     # Add the "Restart" button at the end
     if st.button("Restart"):
