@@ -1,0 +1,226 @@
+[
+	{
+    "question": "When a process is created using the classical fork() system call, which of the following is not inherited by the child process?",
+    "options": [
+        "Process address space",
+        "User ID",
+        "Process ID",
+        "None of the other alternatives",
+        "Signal handlers"
+    ],
+    "answer": "Process ID"
+},
+{
+	"question": "In memory management, global page replacement is usually preferable to local page replacement because:",
+	"options": [
+			"Most processes have small working sets",
+			"Most processes have large working sets",
+			"Most processes are highly synchronized",
+			"Most processes are well-behaved",
+			"The set of pages from which to choose is larger"
+	],
+	"answer": "The set of pages from which to choose is larger"
+},
+{
+	"question": "Three important design principles in operating systems are:",
+	"options": [
+			"Parallelism, concurrency, and multi-anything",
+			"Caching, virtualization, and support for concurrency",
+			"Abstraction, fairness, and context-switching",
+			"All alternatives",
+			"Throughput, response time, and support for priority"
+	],
+	"answer": "Caching, virtualization, and support for concurrency"
+},
+{
+	"question": "Changing the permissions on your files is easy in Linux because:",
+	"options": [
+			"There is a shell program for doing so",
+			"All alternatives",
+			"There is a built-in command-line utility for doing so",
+			"There is a C programming library routine for doing so",
+			"There is a superuser on call for doing so"
+	],
+	"answer": "All alternatives"
+},
+{
+	"question": "In message-passing IPC on a Linux system, the maximum message size permitted is:",
+	"options": [
+			"64 bytes",
+			"1 byte",
+			"None of the other alternatives",
+			"140 bytes",
+			"32 bytes"
+	],
+	"answer": "None of the other alternatives"
+},
+{
+	"question": "The text segment of a process address space contains:",
+	"options": [
+			"The inter-process communication (IPC) messages for the process",
+			"The dynamically allocated data associated with the process",
+			"The text-messaging chat messages for the process",
+			"All alternatives",
+			"The executable code associated with the process"
+	],
+	"answer": "The executable code associated with the process"
+},
+{
+	"question": "Counting semaphores:",
+	"options": [
+			"All alternatives",
+			"Have increment and decrement operations",
+			"Can use queueing to manage waiting processes",
+			"Are used for managing multiple instances of a resource",
+			"Generalize the notion of a binary semaphore"
+	],
+	"answer": "All alternatives"
+},{
+	"question": "The Banker’s Algorithm is an example of a technique for:",
+	"options": [
+			"Deadlock prevention",
+			"Deadlock recovery",
+			"Deadlock detection",
+			"Deadlock avoidance",
+			"Stabilizing turbulent financial markets"
+	],
+	"answer": "Deadlock avoidance"
+},{
+	"question": "With asynchronous I/O, file system changes will be committed to disk when:",
+	"options": [
+			"The system is rebooted",
+			"The in-memory inode is updated",
+			"Nightly file system backups are run",
+			"The sync daemon runs",
+			"The system administrator feels like doing it"
+	],
+	"answer": "The sync daemon runs"
+},{
+	"question": "Implementing LRU precisely in an OS is expensive, so practical implementations often use an approximation called:",
+	"options": [
+			"NFU",
+			"None of the other alternatives",
+			"MFU",
+			"MRU",
+			"LFU with aging"
+	],
+	"answer": "None of the other alternatives"
+},{
+	"question": "For two processes accessing a shared variable, Peterson’s algorithm provides:",
+	"options": [
+			"Progress",
+			"Bounded waiting",
+			"Mutual exclusion",
+			"All choices"
+	],
+	"answer": "All choices"
+},{
+	"question": "Three file descriptors associated with every Linux process are:",
+	"options": [
+			"Standard input, standard output, and standard error",
+			"Standard input, standard output, and standard transmission",
+			"Standard input, standard output, and standard deviation",
+			"Standard input, standard output, and standard terminal",
+			"Standard input, standard output, and standard pipe"
+	],
+	"answer": "Standard input, standard output, and standard error"
+},{
+	"question": "The system calls chown(), and chmod() are examples of operating system functionality for:",
+	"options": [
+			"Protection and security",
+			"Process control",
+			"Device manipulation",
+			"Information maintenance",
+			"File manipulation"
+	],
+	"answer": "Protection and security"
+},{
+	"question": "Among CPU scheduling policies, First Come First Serve (FCFS) is attractive because:",
+	"options": [
+			"It is simple to implement",
+			"It is fair to all processes",
+			"It minimizes the average waiting time in the system",
+			"It minimizes the average response time in the system",
+			"It minimizes the total waiting time in the system"
+	],
+	"answer": "It is simple to implement"
+},{
+	"question": "Which operating system is using the Optimal (Bélády’s) page replacement policy?",
+	"options": [
+			"Windows",
+			"None of the other alternatives",
+			"Centos",
+			"Mac OS",
+			"Linux"
+	],
+	"answer": "None of the other alternatives"
+},{
+	"question": "Which one of the page replacement policies is faster:",
+	"options": [
+			"FIFO",
+			"NRU",
+			"LRU",
+			"Optimal (Bélády’s)"
+	],
+	"answer": "FIFO"
+},{
+	"question": "Direct Memory Access (DMA) requires a special controller that facilitates the transfer of blocks between the I/O device and main memory.",
+	"options": [
+			"True",
+			"False"
+	],
+	"answer": "True"
+},{
+	"question": "An operating system can be viewed as a resource allocator to control various I/O devices and user programs.",
+	"options": [
+			"True",
+			"False"
+	],
+	"answer": "True"
+},
+{
+	"question": "Multiprogramming is a technique used in an operating system for sharing a single processor between several independent jobs.",
+	"options": [
+			"False",
+			"True"
+	],
+	"answer": "True"
+},{
+	"question": "When a child process is created using the fork() system call, the child process inherits all the open file descriptors of the parent process.",
+	"options": [
+			"True",
+			"False"
+	],
+	"answer": "True"
+},{
+	"question": "Thread scheduling overhead is higher for user threads than kernel threads.",
+	"options": [
+			"True",
+			"False"
+	],
+	"answer": "False"
+},{
+	"question": "The Linked-list Allocation scheme causes external fragmentation.",
+	"options": [
+			"False",
+			"True"
+	],
+	"answer": "False"
+},
+{
+	"question": "Segmentation leads to problems with external fragmentation; using segmented paged memory overcomes this (at the cost of some internal fragmentation).",
+	"options": [
+			"False",
+			"True"
+	],
+	"answer": "True"
+},{
+	"question": "The round robin scheduling algorithm avoids the convoy effect.",
+	"options": [
+			"False",
+			"True"
+	],
+	"answer": "True"
+}
+
+]

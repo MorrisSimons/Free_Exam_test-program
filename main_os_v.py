@@ -82,5 +82,5 @@ def main(data):
     st.write("---")
 
 if __name__ == "__main__":
-    data = "os/24_exam"
+    data = "os/all"
     main(data)
