@@ -1,0 +1,123 @@
+[
+	{
+			"question": "Protection is needed in many places in a computer system, e.g., for the processor ('CPU protection'). How can we implement CPU protection?",
+			"options": [
+					"Protecting the interrupt vector from user-mode access",
+					"Using dual-mode operation (user-mode and kernel-mode)",
+					"Using semaphores",
+					"None of the alternatives provide CPU protection",
+					"Using a timer and clock interrupts"
+			],
+			"answer": ""
+	},
+	{
+			"question": "Which of the following operations is allowed in user mode?",
+			"options": [
+					"Turn off interrupts",
+					"Modify the interrupt vector (interrupt descriptor table)",
+					"Allocate memory on the heap",
+					"Directly access a sector on a disk (i.e., directly access the hardware)",
+					"Change the page table"
+			],
+			"answer": ""
+	},
+	{
+			"question": "Which of the following operations will result in a system call in a normal operating system?",
+			"options": [
+					"Creating a new process",
+					"Executing an unconditional branch instruction",
+					"Changing the stack pointer",
+					"None of the alternatives",
+					"Allocating dynamic memory on the heap"
+			],
+			"answer": ""
+	},
+	{
+			"question": "Which of the following events will take place when switching from one process (old) to another (new)?",
+			"options": [
+					"All of the events happen",
+					"Remove all virtual memory pages of the old process from the main memory.",
+					"Store CPU register states of the old process into the PCB.",
+					"Copy data from the PCB of the new process into the interrupt vector table.",
+					"Turn off the interrupts when the new process is restarted."
+			],
+			"answer": ""
+	},
+	{
+			"question": "Which of the following alternatives is a disadvantage of priority scheduling?",
+			"options": [
+					"Priority scheduling can never be used in multiprocessor systems",
+					"It always favors CPU-bound processes",
+					"It usually decreases the CPU utilization",
+					"All of the alternatives are disadvantages with priority scheduling",
+					"Some processes may not be executed at all if the load is very high"
+			],
+			"answer": ""
+	},
+    {
+        "question": "Which of the following statements is true about deadlocks?",
+        "options": [
+            "Banker’s algorithm is a way to detect deadlocks.",
+            "If two of Coffman's four conditions are fulfilled, we have a deadlock.",
+            "Deadlocks can only occur when at least three processes / threads are involved.",
+            "If there is only a single instance of every resource, a cycle in the resource allocation graph means that there is a deadlock.",
+            "All alternatives are correct"
+        ],
+        "answer": ""
+    },
+    {
+        "question": "Which of the following alternatives is a way to prevent deadlocks?",
+        "options": [
+            "Allocate all resources in a specific order",
+            "Use semaphores to protect all shared resources",
+            "Execute only one process at a time, i.e., no concurrency is allowed (multiple processes may be ready or blocked, but only one is running)",
+            "All of the alternatives prevent deadlocks",
+            "Make transactions indivisible"
+        ],
+        "answer": ""
+    },
+    {
+        "question": "What is the purpose of a memory management unit (MMU)?",
+        "options": [
+            "Manage the graphics memory in 3D-graphics applications",
+            "Allocate dynamic memory",
+            "Manage the swap space",
+            "Translate virtual addresses to physical addresses",
+            "Keep track of free blocks on the disk"
+        ],
+        "answer": ""
+    },
+    {
+        "question": "Which of the following parameters will affect the effective access time (EAT), i.e., the average memory access time, of a demand paging system?",
+        "options": [
+            "None of the alternatives",
+            "Number of cores in the GPU",
+            "Segment table size (number of entries)",
+            "Page fault rate (probability of a page fault)",
+            "Size of paging disk"
+        ],
+        "answer": ""
+    },
+    {
+        "question": "Assume a page-based virtual memory system with 8kB pages. An operating system designer would like to decrease the page size to 2kB. Which of the following alternatives is true if the page size is decreased to 2kB?",
+        "options": [
+            "Neither internal nor external fragmentation are affected",
+            "Internal fragmentation increases",
+            "Internal fragmentation decreases",
+            "Both external and internal fragmentation increase",
+            "External fragmentation increases"
+        ],
+        "answer": ""
+    },
+    {
+        "question": "Which of the following terms below refers to a method used for allocation of disk space for a file?",
+        "options": [
+            "Segmented allocation",
+            "None of the alternatives is a valid allocation method",
+            "Contiguous allocation",
+            "Virtual allocation",
+            "Page-based allocation"
+        ],
+        "answer": ""
+    }
+]

@@ -1,0 +1,122 @@
+[
+	{
+		"question": "Which of the following operations is allowed in user mode?",
+		"options": [
+			"Read an entry in the page table",
+			"None of the listed operations is allowed in user mode",
+			"Turn off interrupts",
+			"Directly access a sector on a disk (i.e., directly access the hardware)",
+			"Modify the interrupt vector (interrupt descriptor table)"
+		],
+		"answer": "None of the listed operations is allowed in user mode",
+		"explanation": "User mode is a restricted mode where critical operations such as modifying system tables, directly accessing hardware, or turning off interrupts are not allowed to prevent users from compromising system stability or security."
+	},
+	{
+		"question": "Protection is needed in many places in a computer system, e.g., for the processor ('CPU protection'). How can we implement CPU protection?",
+		"options": [
+			"None of the alternatives provide CPU protection",
+			"Protecting the interrupt vector from user-mode access",
+			"Using semaphores",
+			"Using a timer and clock interrupts",
+			"Using dual-mode operation (user-mode and kernel-mode)"
+		],
+		"answer": "Using a timer and clock interrupts",
+		"explanation": "CPU protection is implemented using a timer and clock interrupts, which can preempt processes that monopolize the CPU, thus preventing any single process from causing the system to hang indefinitely."
+	},
+	{
+		"question": "Which of the following operations will result in a system call in a normal operating system?",
+		"options": [
+			"Allocating dynamic memory on the heap",
+			"Push variables on the thread's stack",
+			"Executing a conditional branch instruction",
+			"None of the alternatives",
+			"Reading a file from disk"
+		],
+		"answer": "Reading a file from disk",
+		"explanation": "Reading a file from disk involves interacting with the operating system to access hardware, which requires a system call. Memory allocation and stack operations typically do not require system calls."
+	},
+	{
+		"question": "Which of the following alternatives is a mechanism / technique for inter-process communication (IPC)?",
+		"options": [
+			"Message-passing",
+			"Contiguous synchronization",
+			"None of the other alternatives",
+			"Hardware interrupt",
+			"Dual-mode operation"
+		],
+		"answer": "Message-passing",
+		"explanation": "Message-passing is a common IPC technique that allows processes to communicate by sending and receiving messages, enabling coordination and data sharing between processes."
+	},
+	{
+		"question": "Which of the following scheduling algorithms gives the shortest average waiting time?",
+		"options": [
+			"Shortest-job-first",
+			"First-come, first-served",
+			"Round-robin",
+			"Fair-share scheduling",
+			"Priority scheduling"
+		],
+		"answer": "Shortest-job-first",
+		"explanation": "Shortest-job-first scheduling minimizes the average waiting time because it executes the shortest tasks first, reducing the time that longer tasks wait in the queue."
+	},
+	{
+		"question": "Which of the following scheduling algorithms is most suitable in a realtime system where it is important to meet certain deadlines?",
+		"options": [
+			"They all work equally well",
+			"Priority scheduling",
+			"First-come, first-served",
+			"Round-robin",
+			"Shortest-job-first"
+		],
+		"answer": "Priority scheduling",
+		"explanation": "In real-time systems, priority scheduling is preferred because it allows critical tasks with strict deadlines to be prioritized and executed before less critical tasks."
+	},
+	{
+		"question": "A TLB (translation look-aside buffer) improves performance by",
+		"options": [
+			"Storing the most recently used disk blocks in main memory",
+			"All alternatives are used",
+			"Keeping track of which virtual pages are stored where on the external disk",
+			"Using a small table of the most recent translations between logical and physical addresses",
+			"Looking in the interrupt vector in advance and thus can handle interrupts faster"
+		],
+		"answer": "Using a small table of the most recent translations between logical and physical addresses",
+		"explanation": "A TLB is a cache that stores recent translations of virtual to physical addresses, allowing the system to quickly translate addresses without accessing the page table each time, thus improving performance."
+	},
+	{
+		"question": "Which of the following terms below does not refer to a method used for allocation of disk space for a file?",
+		"options": [
+			"Virtual allocation",
+			"All alternatives are valid allocation methods",
+			"Linked-list allocation",
+			"Indexed (i-node) allocation",
+			"Contiguous allocation"
+		],
+		"answer": "Virtual allocation",
+		"explanation": "Virtual allocation is not a method used for allocating disk space for files. Common methods include contiguous, linked-list, and indexed allocation, each with different strategies for managing file storage on disk."
+	},
+	{
+		"question": "Assume a FAT (file allocation table) file system. The disk has 8192 bytes (8 Kbyte) blocks and each FAT entry is 4 bytes large. The FAT is stored in a single disk block. How large disk partitions can be handled by this system?",
+		"options": [
+			"1 Gbyte",
+			"4 Mbyte",
+			"16 Mbyte",
+			"2 Gbyte",
+			"8 Mbyte"
+		],
+		"answer": "8 Mbyte",
+		"explanation": "The size of the disk partition that can be handled depends on the number of entries in the FAT and the size of each block. Given the block size and FAT entry size, this system can handle up to 8 Mbyte disk partitions."
+	},
+	{
+		"question": "Which of the following devices is a typical block device?",
+		"options": [
+			"Keyboard",
+			"None of the alternatives is a block device",
+			"Line printer",
+			"High-resolution display",
+			"Solid-state disk"
+		],
+		"answer": "Solid-state disk",
+		"explanation": "Block devices, like solid-state disks, store data in fixed-size blocks and allow the system to read and write entire blocks at a time, unlike character devices like keyboards that handle data streams one character at a time."
+	}
+]
