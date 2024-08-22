@@ -11,14 +11,17 @@ def reset_quiz():
     st.session_state.seen_questions = []
     st.session_state.remaining_questions = st.session_state.data.copy()
     random.shuffle(st.session_state.remaining_questions)  # Randomize the order of questions
-    current_q = st.session_state.remaining_questions.pop()
-    st.session_state.current_question = current_q["question"]
-    st.session_state.current_answer = current_q["answer"]
     st.session_state.incorrect_answers = 0  # Reset incorrect answers counter
-    st.session_state.show_answer = False
-    st.session_state.correct = False
-    st.session_state.alternatives = get_question_with_alternatives(current_q["options"], st.session_state.current_answer)
-    st.session_state.explanation = current_q["explanation"]  # Store the explanation
+    st.session_state.current_question_index = 1  # Reset the question index
+
+    if st.session_state.remaining_questions:
+        current_q = st.session_state.remaining_questions.pop()
+        st.session_state.current_question = current_q["question"]
+        st.session_state.current_answer = current_q["answer"]
+        st.session_state.show_answer = False
+        st.session_state.correct = False
+        st.session_state.alternatives = get_question_with_alternatives(current_q["options"], st.session_state.current_answer)
+        st.session_state.explanation = current_q["explanation"]  # Store the explanation
 
 def get_question_with_alternatives(options, correct_answer):
     alternatives = random.sample(options, len(options))  # Shuffle the alternatives
@@ -29,6 +32,7 @@ def get_question_with_alternatives(options, correct_answer):
 
 def load_next_question():
     if st.session_state.remaining_questions:
+        st.session_state.current_question_index += 1
         st.session_state.seen_questions.append({
             "question": st.session_state.current_question,
             "answer": st.session_state.current_answer
@@ -40,7 +44,6 @@ def load_next_question():
         st.session_state.correct = False  # Reset correctness
         st.session_state.alternatives = get_question_with_alternatives(current_q["options"], st.session_state.current_answer)  # Get new alternatives
         st.session_state.explanation = current_q["explanation"]  # Update explanation for new question
-        
 
 def main(data):
     st.title("Flashcard Question and Answer App")
@@ -52,8 +55,15 @@ def main(data):
     total_questions = len(st.session_state.data)
     
     # Initialize session state
-    if 'remaining_questions' not in st.session_state or len(st.session_state.remaining_questions) == 0:
+    if 'remaining_questions' not in st.session_state:
         reset_quiz()
+    
+    if st.session_state.current_question_index >= total_questions:
+        st.write("You have completed all the questions!")
+        st.write(f"Total incorrect answers: {st.session_state.incorrect_answers}")
+        if st.button("Restart"):
+            reset_quiz()
+        return
     
     # Handle the "Next Question" button
     next_question_clicked = st.button("Next Question")
@@ -61,7 +71,7 @@ def main(data):
         load_next_question()
 
     # Display the counters
-    solved_questions = total_questions - len(st.session_state.remaining_questions) - 1
+    solved_questions = st.session_state.current_question_index
     incorrect_answers = st.session_state.incorrect_answers
     st.write(f"Questions solved: {solved_questions}/{total_questions}")
     st.write(f"Incorrect answers: {incorrect_answers}")
@@ -85,10 +95,6 @@ def main(data):
         # Show explanation after the answer is revealed
         st.write(f"**Explanation:** {st.session_state.explanation}")
 
-    # Add the "Restart" button at the end
-    if st.button("Restart"):
-        reset_quiz()
-    
     st.write("---")
 
 if __name__ == "__main__":
